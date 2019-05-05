@@ -32,11 +32,20 @@ namespace RPG.Combat
 
         private void AttackBehaviour()
         {
-            if(timeSinceLastAttack > timeBetweenAttacks) {
+            transform.LookAt(target.transform);
+
+            if(timeSinceLastAttack > timeBetweenAttacks)
+            {
                 //this will trigger Hit() and animation
-                GetComponent<Animator>().SetTrigger("attack");
+                TriggerAttack();
                 timeSinceLastAttack = 0;
             }
+        }
+
+        private void TriggerAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("stopAttack");
+            GetComponent<Animator>().SetTrigger("attack");
         }
 
         private bool GetIsInRange()
@@ -44,18 +53,33 @@ namespace RPG.Combat
             return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
         }
 
+        public bool CanAttack(CombatTarget combatTarget) {
+            if(combatTarget == null) return false;
+            Health targetToTest = combatTarget.GetComponent<Health>();
+            return targetToTest != null && !targetToTest.IsDead();
+        }
+
         public void Attack(CombatTarget combatTarget) {
             GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.GetComponent<Health>();
         }
 
-        public void Cancel() {
-            GetComponent<Animator>().SetTrigger("stopAttack");
+        public void Cancel()
+        {
+            StopAttack();
             target = null;
+            timeSinceLastAttack = 0;
+        }
+
+        private void StopAttack()
+        {
+            GetComponent<Animator>().ResetTrigger("attack");
+            GetComponent<Animator>().SetTrigger("stopAttack");
         }
 
         //Animation Event
         void Hit() {
+            if(target == null) return;
             target.TakeDamage(weaponDamage);
         }
     }
