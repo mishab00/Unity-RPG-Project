@@ -79,6 +79,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 454757429, guid: 02496b5fd0d254b4382c74fa39ec3bba, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 8ffd23b0e71e9734cb5ca1be66226867, type: 2}
     - target: {fileID: 5162777068403273627, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: weaponRange

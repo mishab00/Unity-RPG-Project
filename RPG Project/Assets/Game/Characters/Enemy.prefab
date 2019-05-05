@@ -13,7 +13,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &-8288466242975322741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,37 +98,37 @@ PrefabInstance:
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.0280285
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.0041537
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.423715
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.99595505
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.089853026
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
@@ -143,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 169.69
       objectReference: {fileID: 0}
     - target: {fileID: 460288318513921643, guid: 02496b5fd0d254b4382c74fa39ec3bba,
         type: 3}
@@ -155,8 +155,7 @@ PrefabInstance:
       propertyPath: health
       value: 20
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6694518901486551504, guid: 02496b5fd0d254b4382c74fa39ec3bba, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02496b5fd0d254b4382c74fa39ec3bba, type: 3}
 --- !u!1 &8282872663317058765 stripped
 GameObject:
