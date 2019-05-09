@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace RPG.Combat
+namespace RPG.Core
 {
     
     public class Health : MonoBehaviour {
@@ -15,7 +15,7 @@ namespace RPG.Combat
 
         public void TakeDamage(float damage) {
             healthPoints = Mathf.Max(healthPoints - damage, 0);
-            print(healthPoints);
+            print(gameObject.name + " has " +  healthPoints);
             if(healthPoints == 0) {
                 Die();
             }
