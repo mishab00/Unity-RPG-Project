@@ -2,12 +2,16 @@ using UnityEngine;
 using RPG.Combat;
 using RPG.Core;
 using RPG.Movement;
+using System;
+
 namespace RPG.Control
 {
     public class AIController : MonoBehaviour
     {
         [SerializeField] float chaseDistance = 5f;
         [SerializeField] float suspicionTime = 3f;
+        [SerializeField] PatrolPath patrolPath;
+        [SerializeField] float wayPointTollerance = 1f;
 
         Fighter fighter;
         Health health;
@@ -41,7 +45,7 @@ namespace RPG.Control
             }
             else
             {
-                GuardBehaviour();
+                PatrolBehaviour();
             }
             timeSinceLastSawPlayer += Time.deltaTime;
 
@@ -52,10 +56,34 @@ namespace RPG.Control
             GetComponent<ActionScheduler>().CancelCurrentAction();
         }
 
-        private void GuardBehaviour()
+        private void PatrolBehaviour()
         {
+            Vector3 nextposition = guardPosition;
+
+            if(patrolPath != null) {
+                if((AtWayPoint())) {
+                    CycleWaypoint();
+                }
+                nextposition = GetCurrentWayPoint();
+            }
             fighter.Cancel();
             mover.StartMoveAction(guardPosition);
+        }
+
+        private Vector3 GetCurrentWayPoint()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void CycleWaypoint()
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool AtWayPoint()
+        {
+            float distanceToWayPoint = Vector3.Distance(transform.position, GetCurrentWayPoint());
+            return distanceToWayPoint < wayPointTollerance;
         }
 
         private void AttackBehaviour()
