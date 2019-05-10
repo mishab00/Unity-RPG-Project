@@ -14,6 +14,7 @@ namespace RPG.Control
         private void Start() {
             health = GetComponent<Health>();
         }
+
         void Update()
         {
             if (health.IsDead()) return;
@@ -33,7 +34,7 @@ namespace RPG.Control
 
                 if(!GetComponent<Fighter>().CanAttack(target.gameObject)) continue;
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButton(0))
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }
