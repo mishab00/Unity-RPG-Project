@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: weaponRange
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5162777068403273627, guid: 02496b5fd0d254b4382c74fa39ec3bba,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02496b5fd0d254b4382c74fa39ec3bba, type: 3}
 --- !u!1 &327057721739350698 stripped
